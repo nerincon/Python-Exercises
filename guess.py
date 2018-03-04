@@ -20,7 +20,11 @@ def play_game():
     count = 5
     while True:
         if count > 0:
-            guess = int(input("What's the number? "))
+            try:
+                guess = int(input("What's the number? "))
+            except ValueError:
+                print("That is not a number!")
+                play_again()
             count -= 1
             if guess > random_number:
                 print("{} is too high".format(guess))
