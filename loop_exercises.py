@@ -47,3 +47,18 @@ def triangle(h, t=0):
 triangle(7)
 
 
+# Print a Banner
+text = input("Text? ")
+w = len(text)
+h = 3
+print('*' * (w + 4))
+for i in range(h-2):
+    print ('*' + " " + text + " " + '*')
+print('*' * (w + 4))
+
+
+
+
+
+
+
