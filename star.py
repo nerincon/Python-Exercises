@@ -1,4 +1,4 @@
 from turtle import *
-for i in range(6):
+for i in range(5):
     forward(90)
-    left(60)
+    right(144)
