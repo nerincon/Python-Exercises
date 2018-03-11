@@ -27,6 +27,23 @@
         
 # print(count())
 
+
+# # Exercise 4
+# import json
+# file = input("File Name: ")
+# with open(file, 'r') as file:
+#   jsdata = json.load(file)
+
+# import matplotlib
+# matplotlib.use("Agg")
+# from matplotlib import pyplot
+
+
+# pyplot.plot(jsdata["data"])
+# pyplot.savefig('plotjson.png')
+# pyplot.close() # start a new plot
+
+
 # # Bonus Exercise
 # import io
 # file = io.StringIO()
