@@ -62,7 +62,7 @@ while True:
         
     def save_entry():
         with open('phone_list.json', 'w') as f:
-            json.dump(phonebook, f)
+            json.dump(phonebook, f, indent=4)
             
     def delete_entry():
         person = input("Person Name: ")
