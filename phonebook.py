@@ -26,7 +26,8 @@ while True:
                 delete_entry()
             elif quest == 4:
                 lookup()
-                print(phonebook)
+                for k, v in phonebook.items():
+                    print ('Name: {}  Phone Number: {}'.format(k, v.get("Phone Number")))
             elif quest == 5:
                 save_entry()
             elif quest == 6:
