@@ -1,0 +1,63 @@
+ord("a") ---> output 97
+chr(110) ---> "n"
+
+--------------------- Turtle example from Trinket --------------------
+
+# Click in the righthand window to make it active then use your arrow
+# keys to control the spaceship!
+import turtle
+
+screen = turtle.Screen()
+
+# this assures that the size of the screen will always be 400x400 ...
+screen.setup(400, 400)
+
+# ... which is the same size as our image
+# now set the background to our space image
+screen.bgpic("space.jpg")
+
+# Or, set the shape of a turtle
+screen.addshape("rocketship.png")
+turtle.shape("rocketship.png")
+
+move_speed = 10
+turn_speed = 10
+
+# these defs control the movement of our "turtle"
+def forward():
+  turtle.forward(move_speed)
+
+def backward():
+  turtle.backward(move_speed)
+
+def left():
+  turtle.left(turn_speed)
+
+def right():
+  turtle.right(turn_speed)
+
+turtle.penup()
+turtle.speed(0)
+turtle.home()
+
+# now associate the defs from above with certain keyboard events
+screen.onkey(forward, "Up")
+screen.onkey(backward, "Down")
+screen.onkey(left, "Left")
+screen.onkey(right, "Right")
+screen.listen
+
+
+
+shapesize()
+fillcolor()
+turtle.begin_fill()
+Call just before drawing a shape to be filled. Equivalent to fill(True).
+
+turtle.end_fill()
+Fill the shape drawn after the last call to begin_fill(). Equivalent to fill(False).
+color()
+Return the current pencolor and the current fillcolor as a pair of color specification strings or tuples as returned by pencolor() and fillcolor().
+
+# to get the nested key inside a dictionary The "{}" is to give you an empty dictionary if it does not find "Favorite Foods"
+contact.get("favorite foods", {}).get("fast")
