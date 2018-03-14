@@ -1,13 +1,16 @@
 from zombie import Zombie
 from goblin import Goblin
 from hero import Hero
+from medic import Medic
 
 def main ():
-    
     player = Hero()
-    enemy = Goblin()
+    # enemy = Goblin()
     # enemy = Zombie()
+    enemy = Medic(5,2)
+    # enemy = Shadow(1,2)
     
+    player.print_status()
     while enemy.alive() and player.alive():
         print("You have {} health and {} power.".format(player.health, player.power))
         print()
@@ -19,8 +22,10 @@ def main ():
         raw_input = input()
         if raw_input == "1":
             player.attack(enemy)
-            print("You do {} damage to the .".format(player.power, type(enemy).__name__.lower()))
+            # print("You do {} damage to the {}".format(player.power, type(enemy).__name__.lower()))
             if player.health <= 0:
+                print("The %s is dead."%(type(player).__name__.lower()))
+            elif enemy.health <= 0:
                 print("The %s is dead."%(type(enemy).__name__.lower()))
         elif raw_input == "2":
             pass
@@ -40,5 +45,4 @@ def main ():
 
 main()
 
-# c = Character("Hero")
-# c.print_status()
+
