@@ -1,16 +1,51 @@
-from zombie import Zombie
-from goblin import Goblin
 from hero import Hero
-from medic import Medic
+from monsters import *
+
+
 
 def main ():
-    player = Hero()
-    # enemy = Goblin()
-    # enemy = Zombie()
-    enemy = Medic(5,2)
-    # enemy = Shadow(1,2)
+    people = ["Goblin", "Zombie", "Medic", "Wizard", "Shadow", "Hero"]
+    for p in people:
+        print(p)
+    pick_player = input("Who do you want to be? (pick player from above list) > ").capitalize()
+    pick_enemy = input("Who do you want as your enemy? (pick player from above list) > ").capitalize()
+
     
-    player.print_status()
+    h_player = int(input("Pick health for player (0-infinity)? "))
+    p_player = int(input("Pick power for player (0-infinity)? "))
+    h_enemy = int(input("Pick health for enemy (0-infinity)? "))
+    p_enemy = int(input("Pick power for enemy (0-infinity)? "))
+    
+        
+    if pick_player == "Goblin":
+        player = Goblin(h_player, p_player)
+    elif pick_player == "Zombie":
+        player = Zombie(h_player, p_player)
+    elif pick_player == "Medic":
+        player = Medic(h_player, p_player)
+    elif pick_player == "Wizard":
+        player = Wizard(h_player, p_player)
+    elif pick_player == "Shadow":
+        player = Shadow(h_player, p_player)
+    elif pick_player == "Hero":
+        player = Hero(h_player, p_player)
+        
+        
+        
+    if pick_enemy == "Hero":
+        enemy = Hero(h_enemy, p_enemy)
+    elif pick_enemy == "Zombie":
+        enemy = Zombie(h_enemy, p_enemy)
+    elif pick_enemy == "Medic":
+        enemy = Medic(h_enemy, p_enemy)
+    elif pick_enemy == "Wizard":
+        enemy = Wizard(h_enemy, p_enemy)
+    elif pick_enemy == "Shadow":
+        enemy = Shadow(h_enemy, p_enemy)
+    elif pick_enemy == "Goblin":
+        enemy = Goblin(h_enemy, p_enemy)
+        
+    # player.print_status()
     while enemy.alive() and player.alive():
         print("You have {} health and {} power.".format(player.health, player.power))
         print()
@@ -36,9 +71,10 @@ def main ():
             print("Invalid input {}".format(raw_input))
             
         if enemy.alive() > 0:
-            # Goblin attacks hero
+            # Enemy attacks Player
             player.health -= enemy.power
-            print("The goblin does {} damage to you.".format(enemy.power))
+            print("The %s does %d damage to you."%(type(enemy).__name__.lower(), enemy.power))
+            print("The %s has %d health"%(type(enemy).__name__.lower(), enemy.health))
             if player.health <= 0:
                 print("You are dead.")
 
