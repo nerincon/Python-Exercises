@@ -28,42 +28,54 @@ power = 7
 health = 8
 
 if armor == 0:
-    if power < health:
-        old_power = power
-        power -= power
-        health -= old_power
-        print(power)
-        print(health)
-    else:
-        power -= health
-        health -= health
-        print(power)
-        print(health)
-elif armor < power and health-armor < power:
-    old_armor = armor
-    armor -= armor
-    print(armor)
-    power -= old_armor
-    print(power)
-    old_power = power
-    power -= power
-    print(power)
-    health -= old_power
-    print(health)
-elif armor < power and health-armor >= power:
-    old_armor = armor
-    armor -= armor
-    print(armor)
-    power -= old_armor
-    print(power)
     health -= power
-    print(health)
-    power -= power
-    print(power)
-elif armor > power:
-    old_armor = armor
-    armor -= power
-    print(armor)
-    power -= power
-    print(power)
+elif armor < power:
+    armor -= armor
+    power_left = power
+    power_left -= armor
+    health -= power_left
+elif armor >= power:
+    armor -= armor
+
+
+
+# if armor == 0:
+#     if power < health:
+#         old_power = power
+#         power -= power
+#         health -= old_power
+#         print(power)
+#         print(health)
+#     else:
+#         power -= health
+#         health -= health
+#         print(power)
+#         print(health)
+# elif armor < power and health-armor < power:
+#     old_armor = armor
+#     armor -= armor
+#     print(armor)
+#     power -= old_armor
+#     print(power)
+#     old_power = power
+#     power -= power
+#     print(power)
+#     health -= old_power
+#     print(health)
+# elif armor < power and health-armor >= power:
+#     old_armor = armor
+#     armor -= armor
+#     print(armor)
+#     power -= old_armor
+#     print(power)
+#     health -= power
+#     print(health)
+#     power -= power
+#     print(power)
+# elif armor > power:
+#     old_armor = armor
+#     armor -= power
+#     print(armor)
+#     power -= power
+#     print(power)
 

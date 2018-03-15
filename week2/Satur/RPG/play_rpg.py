@@ -93,10 +93,18 @@ def main ():
             
         if enemy.alive() > 0:
             # Enemy attacks Player
-            player.armor
-            player.health -= enemy.power
+            if player.armor == 0:
+                player.health -= enemy.power
+            elif player.armor < enemy.power:
+                player.armor -= player.armor
+                power_left = enemy.power
+                power_left -= player.armor
+                player.health -= power_left
+            elif player.armor >= enemy.power:
+                player.armor -= player.armor
+            
             print("The %s does %d damage to you."%(type(enemy).__name__.lower(), enemy.power))
-            print("The %s has %d health"%(type(enemy).__name__.lower(), enemy.health))
+            # print("The %s has %d health"%(type(enemy).__name__.lower(), enemy.health))
             if player.health <= 0:
                 print("You are dead.")
 
